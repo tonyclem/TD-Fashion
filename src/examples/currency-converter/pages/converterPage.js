@@ -1,6 +1,6 @@
-import fetchConversion from '../fetchers/fetchConversion.js';
-import fetchSymbols from '../fetchers/fetchSymbols.js';
-import createConverterView from '../views/converterView.js';
+import fetchConversion from "../fetchers/fetchConversion.js";
+import fetchSymbols from "../fetchers/fetchSymbols.js";
+import createConverterView from "../views/converterView.js";
 
 function createConverterPage() {
   // Initialize local state object.
@@ -11,7 +11,7 @@ function createConverterPage() {
   const updateState = (updates) => {
     const prevState = { ...state };
     state = { ...state, ...updates };
-    console.log('state', state);
+    console.log("state", state);
     view.update(state, prevState);
   };
 
@@ -74,3 +74,5 @@ function createConverterPage() {
 }
 
 export default createConverterPage;
+
+// Testing code
