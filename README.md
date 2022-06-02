@@ -27,17 +27,17 @@ When you load the repo folder in VSCode, you may notice that there are some reco
 The folder structure as used in this repo and recommended also for your own application is as follows:
 
 ```text
-public
-src
-└── examples
-└── fetchers
-└── lib
-└── pages
-└── views
-└── app.js
-└── constants.js
-└── index.js
-└── .credentials.js
+
+client
+├── Public
+|   └──styles
+├── src
+|   └── api
+|   └── cart
+|   └── pages
+|   └── views
+├── app.js
+└── constants
 index.html
 ```
 
@@ -46,7 +46,7 @@ index.html
 |--------|-------------|
 | `public` | This folder contains the static files that can be used by the `index.html` file. |
 | `src` | This folder contains all of the JavaScript code. |
-| `src/examples` | This folder contains a couple of fully worked-out examples that were built using the principles that are outlined in this document. If no longer needed, this folder and its contents can be deleted. |
+|  |  |
 | `src/fetchers` | This folder contains functions that deal with fetching application data from specific URLs for use by Page functions. |
 | `src/lib` | This folder provides some ready-made optional utility functions for advanced features that you can use in your application. See [Further Reading](#4-further-reading) below for more information. |
 | `src/pages` | This folder contains functions that create pages to be loaded in the UI, for instance a Home page, an About page etc. Page functions return a subtree of DOM elements and contain logic to handle user interactions and, optionally, logic for fetching data from Web APIs.<br>In a multi-page application<sup>1</sup> a Page function is called by the router when the user navigates to the corresponding page. In a single-page application the one and only Page function is called from within `app.js`. |
@@ -77,18 +77,9 @@ An application architecture also serves as a common vocabulary to communicate wi
 
 For the architecture at hand, we will outline patterns for standard Page and View functions, how to manage application state and standard techniques for handling events and for fetching data.
 
-## 3.1 The Page/View/State Model
-
-Figure 1 below gives a high-level overview of the core application architecture used throughout this starter repo. We will refer to it as the **Page/View/State Model**. In its simplest form, an application following this architecture is made up of a Page object, a View object and a state object. All three objects are regular JavaScript objects.
-
 ![page-view-state-model](./docs/assets/page-view-state-model.png)<br>
 Figure 1: **The Page / View / State Model**
 
-### 3.2 Code Example
-
-Perhaps the quickest way to understand the Page/View/State model is to look at a code example for a mini application that uses this model. In this mini application, the **Increment** button increments a counter by 1 and the **Decrement** button decrements it by 1. The application prevents the counter to go below 0 by disabling the **Decrement** button when the counter is 0.
-
-![mini-app-ui](./docs/assets/mini-app-ui.png)<br>
 Figure 2: **Mini Application UI**
 
 Figure 3 below gives an overview of the complete JavaScript code for this mini application.
@@ -185,7 +176,6 @@ Here is a list of examples of things that would be considered architectural viol
 <!-- prettier-ignore -->
 | Topic | Link |
 | ----------- | ---- |
-| An overview of the example applications from the `examples` folder that adhere to the described Application Architecture. | [Examples](docs/EXAMPLES.md) |
 | More about the Page and View functions/objects. | [Page and View details](docs/PAGE_VIEW.md) |
 | Recipes for common tasks that are in accordance with the Application Architecture. | [Recipes](docs/RECIPES.md) |
 | Miscellaneous utility functions from the `lib` folder that you might find handy for use in your application. | [Utilities](docs/UTILITIES.md) |
@@ -205,7 +195,7 @@ Here is a list of examples of things that would be considered architectural viol
    ```js
    // import loadApp from './examples/menu/app.js';
    // ...
-   import loadApp from './app.js';
+   import loadApp from "./app.js";
    ```
 
 5. Load the application in your browser. You should now see the message from the Home Page as shown in Figure 1 of [3.2 Code Example](#32-code-example).
