@@ -1,10 +1,7 @@
-import createHomePage from './pages/homePage.js';
+import creatHomePage from "./pages/viewPage.js";
 
-function loadApp() {
-  const appRoot = document.getElementById('app-root');
-
-  const { root } = createHomePage();
-  appRoot.appendChild(root);
-}
+const loadApp = () => {
+  creatHomePage();
+};
 
 export default loadApp;
