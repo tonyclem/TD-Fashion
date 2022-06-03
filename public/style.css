@@ -1,4 +1,132 @@
-body {
+:root {
+  --on-primary: #ffffff;
+  --on-primary-color: #212121;
+  --on-background: #000000;
+  --background: #161616;
+  --on-primary-footer: #dddddd;
+  --hv-clr-primary: #fbfbfb;
+  --transition: all 0.5s linear;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: var(--on-primary);
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background: transparent;
+}
+
+.navbar {
+  height: 5rem;
+  background: transparent;
+}
+
+.nav-container {
+  display: flex;
+  align-items: container;
+  justify-content: space-between;
+  width: 100vw;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+.nav-links li,
+.toggle-div-container button {
+  margin: 1.5rem;
+  padding: 0.5rem;
+}
+
+/* nav-link  */
+.nav-link {
+  font-weight: 400;
+}
+
+.toggle-div-container {
+  margin: 0 2rem;
+}
+
+/* font-size */
+.nav-link,
+.toggle-btn {
+  font-size: 1.5rem;
+}
+
+.toggle-div-container .toggle-btn {
+  background: transparent;
+  border-color: transparent;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  color: #ddddddc8;
+}
+
+/* section / hero-section */
+.hero-section {
+  min-height: 100vh;
+  width: 100vw;
+  background: url(../docs/assets/background.jpg);
+  background-position: center;
+  object-position: center;
+  margin-top: -6rem;
+  display: grid;
+  place-content: center;
+}
+
+.hero-container {
+  width: 90vw;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-container h3 {
+  text-transform: none;
+  font-size: 1.5rem;
+}
+
+.hero-text {
+  font-weight: 700;
+  font-size: 5rem;
+}
+
+.hero-text h3 {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.hero-btn {
+  border: 1px solid var(--hv-clr-primary);
+  margin-top: 1rem;
+  padding: 0.5rem 0.8rem;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.hero-btn:hover {
+  background: var(--hv-clr-primary);
+  color: var(--on-background);
+  transition: var(--transition);
 }

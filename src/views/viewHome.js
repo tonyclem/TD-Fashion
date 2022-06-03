@@ -3,11 +3,11 @@ const createHomeView = () => {
   divElement.innerHTML = String.raw`
         <header class="header>
             <nav class="navbar">
-                <div class="nav-center">
+                
+                <div class="nav-container">
+
+
                     <div>
-                        <button class="toggle-nav">
-                            <i class="fas fa-bars"></i>
-                        </button>
                         <ul class="nav-links">
                             <li>
                                 <a class="nav-link">Home</a>
@@ -20,14 +20,23 @@ const createHomeView = () => {
                             </li>
                         </ul>
                     </div>
-                    <div class="toggle-div">
-                        <button>
+
+                    <div class="toggle-div-container">
+                        <button class="toggle-btn">
                             <i class="fas fa-shopping-cart"></i> 
                         </button>
                     </div>
                 </div>
             </nav>
         </header>
+
+        <section class="hero-section">
+            <div class="hero-container">
+                <h1 class="hero-text">Fashion</h1>
+                <h3>Look lorem</h3>
+                <a class="hero-btn">Show Now!</a>
+            </div>
+        </section>
     
     `;
   return divElement;
